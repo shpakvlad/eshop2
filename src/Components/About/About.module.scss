@@ -1,0 +1,13 @@
+//@import "../../css/reusable";
+
+.About {
+  background-color: #2a2a2a;
+
+  .about__text {
+    font-size: 30px;
+  }
+
+  .about__text:not(:first-of-type) {
+    margin-top: 30px;
+  }
+}

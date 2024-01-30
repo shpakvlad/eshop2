@@ -1,0 +1,38 @@
+//@import "../../css/reusable";
+
+.header {
+  padding: 15px 0;
+  background-color: transparent;
+
+
+  .wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+
+    .header__logo {
+      font-size: 35px;
+      text-transform: uppercase;
+    }
+
+    .header__nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    .header__navlink {
+      padding: 10px 20px;
+      font-size: 25px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.4s;
+      color: white;
+
+      &:hover {
+        background-color: limegreen;
+        color: black;
+      }
+
+    }
+  }
+}

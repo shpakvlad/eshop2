@@ -1,0 +1,38 @@
+.filterPanel {
+  margin-bottom: 30px;
+  padding: 40px 20px;
+  font-size: 20px;
+  background-color: limegreen;
+  color: black;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  .productCategories {
+    width: 300px;
+    padding: 5px;
+    background-color: black;
+    color: lime;
+    font-size: 25px;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .categories:not([multiple]) {
+    padding-right: 1.2em;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.25em) 0.58em;
+    background-size: 0.85em auto;
+    background-image: url("../down-chevron.svg");
+  }
+
+  /* скроет иконку стрелки в IE */
+  .categories::-ms-expand {
+    display: none;
+  }
+
+  .Cat {
+    width: 200px;
+  }
+}

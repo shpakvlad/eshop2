@@ -1,0 +1,63 @@
+.Hero {
+  height: 100svh;
+  padding: 0;
+
+  //.wrapper {
+    .Hero__info {
+      height: 80svh;
+      display: flex;
+      align-items: center;
+
+      //.Hero__info-content {
+        .heading1 {
+          font-size: 50px;
+          text-transform: uppercase;
+        }
+
+        .heading2 {
+          margin-top: 10px;
+          font-size: 30px;
+        }
+      //}
+
+      .Hero__buttons {
+        margin-top: 50px;
+
+        a {
+          padding: 10px 20px;
+          background-color: limegreen;;
+          font-size: 25px;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: all 0.4s;
+
+          &:not(:last-of-type) {
+            margin-right: 30px;
+          }
+
+          &:hover {
+            background-color: darkgreen;
+            color: white;
+          }
+
+          &:visited {
+            color: white;
+          }
+        }
+
+        a:last-of-type {
+          background-color: transparent;
+          border: 2px solid limegreen;;
+          color: white;
+
+          &:hover {
+            background-color: darkgreen;
+            color: white;
+          }
+        }
+      }
+
+
+    }
+  //}
+}
