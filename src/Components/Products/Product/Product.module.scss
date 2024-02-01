@@ -4,7 +4,6 @@
   border: 2px solid gray;
   align-content: center;
   border-radius: 20px;
-  //flex: 0 1 50%;
   width: 320px;
   box-shadow: 10px 10px 23px -12px rgba(0,0,0,0.75);
   -webkit-box-shadow: 10px 10px 23px -12px rgba(0,0,0,0.75);
@@ -42,7 +41,8 @@
   padding: 30px 0;
 }
 
-button {
+.tocartButton,
+.showMoreButton {
   padding: 15px 25px;
   transition: all 0.4s;
   text-transform: uppercase;
@@ -59,14 +59,13 @@ button {
   }
 }
 
-button:last-of-type {
+.tocartButton {
   border-radius: 0 0 20px 0;
-
 }
 
 .productDescription {
   width: 100%;
-  text-wrap: balance;
+  //text-wrap: balance;
 }
 
 

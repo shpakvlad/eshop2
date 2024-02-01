@@ -19,9 +19,9 @@ const router = createBrowserRouter([
         element: <ProductInfo/>
     }
 ]
-//     , {
-//     basename: "/eshop/",
-// }
+    // , {
+    //     basename: "/eshop2/",
+    // }
 
 );
 

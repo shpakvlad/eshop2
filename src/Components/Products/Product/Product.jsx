@@ -15,8 +15,8 @@ const Product = ({product}) => {
                 <h2 className={styles.productHeader}>{product.title}</h2>
                 <p className={styles.productDescription}>{product.description}</p>
                 <div className={styles.buttonBlock}>
-                     <button onClick={() => ShowProdInfo()}>More...</button>
-                     <button onClick={() => ShowProdInfo()}>Add to cart</button>
+                     <button className={styles.showMoreButton} onClick={() => ShowProdInfo()}>More...</button>
+                     <button className={styles.tocartButton} onClick={() => ShowProdInfo()}>Add to cart</button>
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ const ProductsList = () => {
     let [products, setProducts] = useState([]);
     let [category, setCategory] = useState('all');
     let [productCategories, setCategories] = useState([]);
+    let [searchInput, setSearchInput] = useState('');
 
     // Load saved category from localStorage on component mount
     useEffect(() => {
@@ -40,14 +41,28 @@ const ProductsList = () => {
 
     function changeCategory(e) {
         // Update the category state when the user selects a new category
-        console.log(e.currentTarget.textContent);
-
         setCategory(e.currentTarget.textContent);
+    }
+
+    function searchProduct() {
+
+        axios.get('https://dummyjson.com/products/search?q=' + searchInput)
+            .then(response => setProducts(response.data.products));
+    }
+
+    function handleSetInput(e) {
+        setSearchInput(e.currentTarget.value);
     }
 
     return (
         <div className={styles.ProductsList}>
             <div className={styles.wrapper}>
+
+                <div className={styles.searchPanel}>
+                    <input onChange={(value) => handleSetInput(value)} className={styles.searchInput} type="text"/>
+                    <button onClick={searchProduct} className={styles.searchButton}>Search</button>
+                </div>
+
                 <div className={styles.ProductListContent}>
                     <div className={styles.filterPanel}>
                         <div className={styles.productsCategories}>
@@ -59,22 +74,7 @@ const ProductsList = () => {
                                     <li key={index} onClick={changeCategory}>{option}</li>
                                 ))}
                             </nav>
-
-                            {/*<select className={styles.categories__select} onChange={changeCategory} value={category}>*/}
-                            {/*    <option value="all">All</option>*/}
-                            {/*    {productCategories.map((option, index) => (*/}
-                            {/*        <option key={index} value={option}>*/}
-                            {/*            {option}*/}
-                            {/*        </option>*/}
-                            {/*    ))}*/}
-                            {/*</select>*/}
                         </div>
-
-                        {/*<div className={styles.search}>*/}
-                        {/*    <p>Search</p>*/}
-                        {/*    <input type="text" placeholder="Enter search string"/>*/}
-                        {/*    <button>Search</button>*/}
-                        {/*</div>*/}
                     </div>
 
                     <div className={styles.productItems}>
