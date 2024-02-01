@@ -13,9 +13,10 @@ const Product = ({product}) => {
             <div className={styles.product__info}>
                 <img className={styles.productImg} src={product.images[0]} alt=""/>
                 <h2 className={styles.productHeader}>{product.title}</h2>
-                <p>{product.description}</p>
+                <p className={styles.productDescription}>{product.description}</p>
                 <div className={styles.buttonBlock}>
-                    <button onClick={() => ShowProdInfo()}>More...</button>
+                     <button onClick={() => ShowProdInfo()}>More...</button>
+                     <button onClick={() => ShowProdInfo()}>Add to cart</button>
                 </div>
             </div>
         </div>

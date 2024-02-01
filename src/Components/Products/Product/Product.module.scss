@@ -1,9 +1,14 @@
 .Product {
-  padding: 30px 35px 0;
-  background-color: #2a2a2a;
-  border: 1px solid limegreen;
+  padding: 25px 25px 0;
+  background-color: #e5e5e5;
+  border: 2px solid gray;
   align-content: center;
-  flex: 0 1 50%;
+  border-radius: 20px;
+  //flex: 0 1 50%;
+  width: 320px;
+  box-shadow: 10px 10px 23px -12px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 23px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 23px -12px rgba(0,0,0,0.75);
 }
 
 .product__info {
@@ -16,12 +21,15 @@
 
 .productImg {
   width: 100%;
-  //height: 320px;
+  height: 250px;
   object-fit: cover;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
 }
 
 .productHeader {
   margin: 20px 0;
+  text-align: left;
 }
 
 .buttonBlock {
@@ -30,7 +38,7 @@
   bottom: 0;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 5px;
   padding: 30px 0;
 }
 
@@ -38,16 +46,27 @@ button {
   padding: 15px 25px;
   transition: all 0.4s;
   text-transform: uppercase;
-  background-color: limegreen;
+  background-color: lightgrey;
   color: black;
   font-weight: 700;
   font-size: 15px;
+  border-radius: 0 0 0 20px;
 
 
   &:hover {
-    background-color: darkgreen;
-    color: white;
+    background-color: white;
+    color: black;
   }
+}
+
+button:last-of-type {
+  border-radius: 0 0 20px 0;
+
+}
+
+.productDescription {
+  width: 100%;
+  text-wrap: balance;
 }
 
 

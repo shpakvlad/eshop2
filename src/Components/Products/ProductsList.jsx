@@ -28,7 +28,7 @@ const ProductsList = () => {
         localStorage.setItem('category', category);
 
         let url = '';
-        if (category === 'all') {
+        if (category === 'All') {
             url = `https://dummyjson.com/products?limit=0`;
         } else {
             url = `https://dummyjson.com/products/category/${category}?limit=0`;
@@ -40,38 +40,50 @@ const ProductsList = () => {
 
     function changeCategory(e) {
         // Update the category state when the user selects a new category
-        setCategory(e.currentTarget.value);
+        console.log(e.currentTarget.textContent);
+
+        setCategory(e.currentTarget.textContent);
     }
 
     return (
         <div className={styles.ProductsList}>
-            <div className="wrapper">
+            <div className={styles.wrapper}>
+                <div className={styles.ProductListContent}>
+                    <div className={styles.filterPanel}>
+                        <div className={styles.productsCategories}>
+                            <p className={styles.filter__panelHeader}>Categories:</p>
 
-                <div className={styles.filterPanel}>
-                    <div className={styles.productsCategories}>
-                        <p className={styles.filter__panelHeader}>Categories:</p>
-                        <select className={styles.categories__select} onChange={changeCategory} value={category}>
-                            <option value="all">All</option>
-                            {productCategories.map((option, index) => (
-                                <option key={index} value={option}>
-                                    {option}
-                                </option>
-                            ))}
-                        </select>
+                            <nav>
+                                <li onClick={changeCategory}>All</li>
+                                {productCategories.map((option, index) => (
+                                    <li key={index} onClick={changeCategory}>{option}</li>
+                                ))}
+                            </nav>
+
+                            {/*<select className={styles.categories__select} onChange={changeCategory} value={category}>*/}
+                            {/*    <option value="all">All</option>*/}
+                            {/*    {productCategories.map((option, index) => (*/}
+                            {/*        <option key={index} value={option}>*/}
+                            {/*            {option}*/}
+                            {/*        </option>*/}
+                            {/*    ))}*/}
+                            {/*</select>*/}
+                        </div>
+
+                        {/*<div className={styles.search}>*/}
+                        {/*    <p>Search</p>*/}
+                        {/*    <input type="text" placeholder="Enter search string"/>*/}
+                        {/*    <button>Search</button>*/}
+                        {/*</div>*/}
                     </div>
 
-                    <div className={styles.search}>
-                        <p>Search</p>
-                        <input type="text" placeholder="Enter search string"/>
-                        <button>Search</button>
+                    <div className={styles.productItems}>
+                        {
+                            products.length > 0 ? products.map(product => <Product product={product}
+                                                                                   key={product.id}/>) :
+                                <h1>Loading...</h1>
+                        }
                     </div>
-                </div>
-
-                <div className={styles.productItems}>
-                    {
-                        products.length > 0 ? products.map(product => <Product product={product} key={product.id}/>) :
-                            <h1>Loading...</h1>
-                    }
                 </div>
             </div>
         </div>

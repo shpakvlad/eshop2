@@ -8,8 +8,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: #1f1f1f;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 html {
@@ -32,9 +32,9 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #2a2a2a;
+  background: white;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: limegreen;
+  background-color: black;
 }
